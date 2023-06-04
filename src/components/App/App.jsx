@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { useState , useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 import './App.css';
 
 
 function App() {
   // Start with an empty array
 
-  let [galleryList , setGalleryList] = useState([]);
+  const [galleryList , setGalleryList] = useState([]);
 
   // Runs when the component is first put on the DOM
 
@@ -19,10 +20,12 @@ function App() {
   // GET data from the server
   
   const getGallery = () => {
-    axios.get('/gallery').then((response) => {
+    axios.get('/gallery')
+    .then((response) => {
       // array of inventory objects will get saved to the state array
       setGalleryList(response.data);
-    }).catch((err) => {
+    })
+    .catch((err) => {
       alert(`Couldn't get gallery. Try again later`);
       console.log('Error with getting gallery' , err);
     });
@@ -37,6 +40,7 @@ function App() {
           <h1 className="App-title">Gallery of My Favorite Animals</h1>
         </header>
         <main>
+          <GalleryForm getGallery={getGallery}/>
           <GalleryList galleryList={galleryList} getGallery={getGallery}/>
           
           

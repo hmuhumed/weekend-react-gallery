@@ -13,6 +13,7 @@ function GalleryList({galleryList , getGallery}){
                     key={item.id}
                     item={item}
                     getGallery={getGallery}
+                    
                     />
                     
                 ))}
