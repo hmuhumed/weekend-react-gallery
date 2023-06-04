@@ -1,5 +1,5 @@
 CREATE TABLE "gallery" (
-"id "SERIAL PRIMARY KEY,
+"id" SERIAL PRIMARY KEY,
 "path" VARCHAR(500000),
 "description" VARCHAR(500) NOT NULL,
 "likes" INT DEFAULT 0 
