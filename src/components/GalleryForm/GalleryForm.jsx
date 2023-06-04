@@ -29,18 +29,20 @@ function GalleryForm({getGallery}){
             <form onSubmit={postGallery}>
                 <label>Picture URL</label>
                 <input 
+                    className='image-input'
                     value={pathInput}
                     type='text'
                     placeholder='Add the url to the image here'
                     onChange={(event) => setPathInput(event.target.value)}
                 />
-                <input 
+                <input
+                    className='description-input' 
                     value={descriptionInput}
                     type='text'
                     placeholder='Give your image a description'
                     onChange={(event) => setDescriptionInput(event.target.value)}
                 />
-                <button type='submit'>Submit</button>
+                <button type='submit' className='submit-btn'>Submit</button>
 
 
 

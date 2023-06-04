@@ -16,16 +16,16 @@
 
 }
 
-/* .like-btn:hover{
+ .button:hover{
     background-color: pink;
     box-shadow: 0px 15px 20px rgba(229, 46, 171, 0.4);
     color: #fff;
     transform: translateY(-7px);
 }
 
-.like-btn:ative{
-    transform: translateY(-1px); */
-/* } */
+.button:ative{
+    transform: translateY(-1px); 
+ } 
 
 img{
     border: 1px solid #712c71;
@@ -35,6 +35,70 @@ img{
     width: 150px;
     
 }
+
+.submit-btn{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+.submit-btn:hover{
+
+    color: #ffffff;
+  background: #ff00ff;
+  border: 1px solid #cc00ff;
+  text-shadow: 0 0 5px #ffffff,
+              0 0 10px #ffffff,
+              0 0 20px #ffffff;
+  box-shadow: 0 0 5px #fb00ff,
+              0 0 20px #ff00ee,
+              0 0 50px #ff00ff,
+              0 0 100px #ea00ff;
+}
+
+.image-input{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out
+}
+
+.image-input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+}
+
+.description-input{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out
+}
+
+.description-input:focus{
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+}
+
 
 
 

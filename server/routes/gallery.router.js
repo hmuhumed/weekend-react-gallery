@@ -38,6 +38,7 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+// POST ROUTE
 router.post('/fresh' , (req, res) => {
     const insertImage = req.body;
     const queryText = `INSERT INTO "gallery" ("path" , "description")
@@ -50,7 +51,25 @@ router.post('/fresh' , (req, res) => {
         console.log('Error in POST server side' , error);
         res.sendStatus(500);
     });
-});
+}); // END POST ROUTE
+
+// DELETE ROUTE 
+router.delete('/like/:id' , (req, res) => {
+    const idToDelete = req.params.id;
+    const queryText = `DELETE FROM "gallery"
+    WHERE "id" = $1;`;
+
+    pool.query(queryText , [idToDelete])
+    .then(response => {
+        res.sendStatus(200);
+    })
+    .catch(err => {
+        res.sendStatus(500)
+    })
+
+})
+
+
 
 
 

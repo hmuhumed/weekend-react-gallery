@@ -17,6 +17,19 @@ function GalleryItem({item, getGallery, id}) {
         console.log(err);
         })
     }
+
+    const handleDelete = (id) => {
+        axios.delete(`/gallery/like/${id}`)
+        .then(response => {
+            getGallery();
+        })
+        .catch(err => {
+            alert('error deleting from gallery on client');
+            console.log(err)
+        })
+    }
+
+
     return (
         <>
         <div className="div" onClick={() => setSelected(!selected)} >
@@ -34,7 +47,9 @@ function GalleryItem({item, getGallery, id}) {
         </div>
         <div className="like">
             <button className="button" onClick={() =>handleLikes(item.id)}>Love</button>
-            <p>{item.likes} Loved This Pic</p>
+            <button className="button" onClick={() =>handleDelete(item.id)}>Delete</button>
+
+            <p >{item.likes} Loved This Pic</p>
             </div>
         </>
     )
